@@ -1,4 +1,8 @@
 {
 	"C_Cpp.errorSquiggles": "enabled",
-	"C_Cpp.intelliSenseEngineFallback": "enabled"
+	"C_Cpp.intelliSenseEngineFallback": "enabled",
+	"files.associations": {
+		"ft_printf.h": "c",
+		"unistd.h": "c"
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:21:55 by leduard2          #+#    #+#             */
-/*   Updated: 2023/08/28 19:20:23 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/08/28 20:37:45 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	ft_print_str(char *str)
 	count = 0;
 	i = 0;
 	while (str[i])
-		count += ft_princ_char((int)str[i]);
+		count += ft_princ_char((int)str[i++]);
 	return (count);
 }
 
-int	ft_print_digit(float n, int base, char case)
+int	ft_print_digit(long n, int base, char flag_type)
 {
 	int		count;
 	char	*symbols;
@@ -39,40 +39,52 @@ int	ft_print_digit(float n, int base, char case)
 	count = 0;
 	symbols = "0123456789abcdef";
 	symbols_up = "0123456789ABCDEF";
-	if (n < 0)
+	if (flag_type == POINTER_CASE)
+	{
+		write(1,"0x",2);
+		return (ft_print_digit(n, base, LOWER_CASE) + 2);
+	}
+	else if (n < 0)
 	{
 		ft_princ_char('-');
-		return (ft_print_digit(-n, base, case) + 1);
+		return (ft_print_digit(-n, base, flag_type) + 1);
 	}
 	else if (n < base)
 	{
-		if (case == LOWER_CASE)
-			return (ft_princ_char(symbols[n]));
-		else if (case == UPPER_CASE)
-			return (ft_princ_char(symbols_up[n] += 32));
+		if (flag_type == UPPER_CASE)
+			return (ft_princ_char(symbols_up[n]));
+		return (ft_princ_char(symbols[n]));
 	}
 	else
 	{
-		count = ft_print_digit(n / base, base, case);
-		return (count + ft_print_digit(n % base, base, case));
+		count = ft_print_digit(n / base, base, flag_type);
+		return (count + ft_print_digit(n % base, base, flag_type));
 	}
+	return (0);
 }
 
 int	ft_print_format(char c, va_list ap)
 {
+	int	count;
+
+	count = 0;
 	if (c == 'c')
-		ft_princ_char(va_arg(ap, int));
+		return (ft_princ_char(va_arg(ap, int)));
 	else if (c == 's')
-		ft_print_str(va_arg(ap, char *));
+		return (ft_print_str(va_arg(ap, char *)));
 	else if (c == 'i' || c == 'd')
-		ft_print_digit((float)va_arg(ap, int), 10, LOWER_CASE);
-	else if (c == 'x' || c == 'p')
-		ft_print_digit((float)va_arg(ap, unsigned int), 16, LOWER_CASE);
+		return (ft_print_digit((long)va_arg(ap, int), 10, LOWER_CASE));
+	else if (c == 'x')
+		return (ft_print_digit((long)va_arg(ap, unsigned int), 16, LOWER_CASE));
 	else if (c == 'X')
-		ft_print_digit((float)va_arg(ap, unsigned int), 16, UPPER_CASE);
+		return (ft_print_digit((long)va_arg(ap, unsigned int), 16, UPPER_CASE));
+	else if (c == 'p')
+		return (ft_print_digit((long)va_arg(ap, unsigned int), 16,
+				POINTER_CASE));
+	return (count);
 }
 
-int	printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		count;
 	va_list	ap;
@@ -89,4 +101,5 @@ int	printf(const char *format, ...)
 			count += ft_princ_char(format[i]);
 		i++;
 	}
+	return (count);
 }
