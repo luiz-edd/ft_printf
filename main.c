@@ -6,12 +6,13 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:22:00 by leduard2          #+#    #+#             */
-/*   Updated: 2023/08/28 20:59:50 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/08/28 21:48:00 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -35,6 +36,18 @@ int	main(void)
 	// ft_printf("my: %d\n",ft_printf("%p\n", p));
 	// printf("original: %d\n",printf("%p\n", p));
 
-	ft_printf("my: %d\n",ft_printf("%u\n", -1));
-	ft_printf("original: %d\n",printf("%u\n", -1));
+	// ft_printf("my: %d\n",ft_printf("%u\n", -1));
+	// ft_printf("original: %d\n",printf("%u\n", -1));
+
+	// ft_printf("my: %d \n",ft_printf(" %%\n"));
+	// printf("----------------------------\n");
+	// printf("original: %d \n",printf(" %%\n" ));
+
+	// ft_printf("my: %d\n",ft_printf(" NULL %p NULL ", NULL));
+	// printf("original: %d\n",printf(" NULL %p NULL ", NULL));
+
+	// ft_printf("my: %d\n", ft_printf(" %p\n", LONG_MAX));
+	// ft_printf("my: %d\n", ft_printf(" %p\n", LONG_MIN));
+	ft_printf("original: %d\n", printf("%7.6d", 12345));
+	// ft_printf("my: %d\n", printf(" %p\n", LONG_MIN));
 }
