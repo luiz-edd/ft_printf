@@ -3,6 +3,7 @@
 	"C_Cpp.intelliSenseEngineFallback": "enabled",
 	"files.associations": {
 		"ft_printf.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"stdarg.h": "c"
 	}
 }
