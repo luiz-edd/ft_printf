@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:22:00 by leduard2          #+#    #+#             */
-/*   Updated: 2023/08/29 18:19:56 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/08/29 23:09:21 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,24 @@
 
 // printf("%d", printf(" NULL %s NULL ", NULL));
 
+//# add 0x at the beggining when use x flag or 0X when using X
+
+//+ add a plus sign at the beggining of a a positive number when using i or d flag
+
+//' ' add a space before a POSITIVE number using i or d flag,
+// this flag is ignored if the + flag is used together,
+// the field should have the
+// same amount of spaces icluding the number itself, example "%4d",
+// 11 will output | 11 |
+
+//- add the suposed output from the suposed flag to the right instead of the left,
+// for example
+// %-2d will print two spaces at the final instead off adding in the beggin
+
 int	main(void)
 {
 	char	*p;
 
 	p = "p";
+	printf("|%-#15.12X| |%6.3d|", 11, -20);
 }
