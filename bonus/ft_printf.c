@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/01 01:34:53 by leduard2          #+#    #+#             */
+/*   Updated: 2023/09/04 20:07:49 by leduard2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	*ft_printf(char *format, ...)
+{
+	int i;
+	int count;
+	t_format *flags;
+
+	i = 0;
+	count = 0;
+	flags = (t_format *)malloc(sizeof(t_format));
+	if (flags == NULL)
+		return (-1);
+	flags = inicialize_flags(flags);
+	va_start(flags->ap, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i = ft_eval_format(flags, format, i + 1);
+			count += ft_print_format(format[i], flags);
+		}
+		else
+		{
+			count += write(1, &format[i], 1);
+			i++;
+		}
+	}
+}

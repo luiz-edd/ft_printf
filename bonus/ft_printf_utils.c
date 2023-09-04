@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 14:25:59 by leduard2          #+#    #+#             */
+/*   Updated: 2023/09/04 15:47:06 by leduard2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+t_format	*inicialize_flags(t_format *flags)
+{
+	flags->wdt = 0;
+	flags->prc = 0;
+	flags->zero = 0;
+	flags->pnt = 0;
+	flags->dash = 0;
+	flags->tl = 0;
+	flags->sign = 0;
+	flags->is_zero = 0;
+	flags->perc = 0;
+	flags->sp = 0;
+	flags->hash = 0;
+	return (flags);
+}
