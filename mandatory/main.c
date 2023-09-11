@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:22:00 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/04 14:11:44 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:21:01 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,15 @@
 // for example
 // %-2d will print two spaces at the final instead off adding in the beggin
 
+//
+
 int	main(void)
 {
 	char	*p;
 	p = "p";
-	// printf("|%-#15.12X| |%6.3d|", 11, -20);
-	// printf("|%-4d|", 42);
+	printf("|%u|", -1);
+	// printf("|%-d|", 42);
 
-	ft_printf("hello %x", 11);
+	// printf("|% d|", 0);
 }
+

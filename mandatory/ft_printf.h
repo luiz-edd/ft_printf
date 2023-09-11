@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 17:42:49 by leduard2          #+#    #+#             */
-/*   Updated: 2023/08/29 23:19:28 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:12:16 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			ft_princ_char(int n);
 int			ft_print_str(char *str);
 int			ft_print_digit(long n, int base, char flag_type);
 int			ft_print_pointer(unsigned long n, int base, char flag_type);
-int			ft_printf(const char *format, ...);
+// int			ft_printf(const char *format, ...);
 int			ft_print_format(char c, va_list ap);
 
 #endif
