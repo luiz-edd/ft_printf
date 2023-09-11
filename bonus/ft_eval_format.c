@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:26:39 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/04 20:46:04 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:25:02 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,25 @@ int	is_normal_flag(char c)
 
 int	ft_print_format(char c, t_format *flags)
 {
-	int	count;
+	int count;
 
 	count = 0;
 
 	if (c == 'c')
-		return (ft_princ_char(flags));
+		return (ft_print_char(flags));
 	else if (c == 's')
 		return (ft_print_str(flags));
 	else if (c == 'i' || c == 'd')
-		return (ft_print_digit((long)va_arg(flags->ap, int)));
-	// else if (c == 'x')
-	// 	return (ft_print_digit((long)va_arg(flags->ap, unsigned int), 16, LOWER_CASE));
-	// else if (c == 'X')
-	// 	return (ft_print_digit((long)va_arg(flags->ap, unsigned int), 16, UPPER_CASE));
-	// else if (c == 'p')
-	// 	return (ft_print_pointer((unsigned long)va_arg(flags->ap, unsigned long), 16,
-	// 			POINTER_CASE));
-	// else if (c == 'u')
-	// 	return (ft_print_digit((long)va_arg(flags->ap, unsigned int), 10, LOWER_CASE));
-	// else if (c == '%')
-	// 	return (ft_princ_char('%'));
+		return (ft_print_digit(flags));
+	else if (c == 'x')
+		return (ft_print_ex(flags));
+	else if (c == 'X')
+		return (ft_print_ex_up(flags));
+	else if (c == 'p')
+		return (ft_print_pointer(flags));
+	else if (c == 'u')
+		return (ft_print_digit(flags));
+	else if (c == '%')
+		return (write(1, "%", 1));
 	return (count);
 }

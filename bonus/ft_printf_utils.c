@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:25:59 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/04 15:47:06 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:08:06 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ t_format	*inicialize_flags(t_format *flags)
 	flags->perc = 0;
 	flags->sp = 0;
 	flags->hash = 0;
+	flags->lowc = 0;
+	flags->upc = 0;
 	return (flags);
 }
