@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	*ft_printf(char *format, ...)
+int	ft_printf(char *format, ...)
 {
 	int i;
 	int count;
@@ -30,7 +30,7 @@ int	*ft_printf(char *format, ...)
 		if (format[i] == '%')
 		{
 			i = ft_eval_format(flags, format, i + 1);
-			count += ft_print_format(format[i], flags);
+			count += ft_print_format(format[i++], flags);
 		}
 		else
 		{
@@ -38,4 +38,5 @@ int	*ft_printf(char *format, ...)
 			i++;
 		}
 	}
+	return (count);
 }

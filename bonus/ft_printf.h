@@ -35,20 +35,22 @@ typedef struct s_format
 	int		upc;
 }			t_format;
 
-//utils
+// utils
 t_format	*inicialize_flags(t_format *flags);
+int			ft_printf(char *format, ...);
 
-//ft_eval_format
+// ft_eval_format
 int			is_normal_flag(char c);
 int			ft_eval_format(t_format *flags, char *format, int i);
 int			ft_print_format(char c, t_format *flags);
 
-//normal flags
+// normal flags
 int			ft_print_char(t_format *flag);
 int			ft_print_str(t_format *flags);
 int			ft_print_digit(t_format *flags);
 int			ft_print_ex(t_format *flags);
 int			ft_print_ex_up(t_format *flags);
 int			ft_print_pointer(t_format *flags);
+int			ft_print_unsigned(t_format *flags);
 
 #endif

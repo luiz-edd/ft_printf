@@ -21,6 +21,6 @@ int	ft_print_str(t_format *flags)
 	i = 0;
 	count = 0;
 	while (str[i])
-		count += write(1, &str[i], 1);
+		count += write(1, &str[i++], 1);
 	return (count);
 }

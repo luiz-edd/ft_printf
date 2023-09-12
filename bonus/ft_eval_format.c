@@ -63,7 +63,7 @@ int	ft_print_format(char c, t_format *flags)
 	else if (c == 'p')
 		return (ft_print_pointer(flags));
 	else if (c == 'u')
-		return (ft_print_digit(flags));
+		return (ft_print_unsigned(flags));
 	else if (c == '%')
 		return (write(1, "%", 1));
 	return (count);

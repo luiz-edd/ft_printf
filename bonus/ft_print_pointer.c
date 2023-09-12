@@ -12,6 +12,23 @@
 
 #include "ft_printf.h"
 
+int	ft_print_pointer_formated(unsigned long n, int base)
+{
+	int		count;
+	char	*symbols;
+	char	*symbols_up;
+
+	count = 0;
+	symbols = "0123456789abcdef";
+	if (n < base)
+		return (write(1, &symbols[n], 1));
+	else
+	{
+		count = ft_print_pointer_formated(n / base, base);
+		return (count + ft_print_pointer_formated(n % base, base));
+	}
+}
+
 int	ft_print_pointer(t_format *flags)
 {
 	unsigned long	n;
@@ -23,21 +40,4 @@ int	ft_print_pointer(t_format *flags)
 		return (write(1, "(nil)", 5));
 	count += write(2, "0x", 2);
 	return (count + ft_print_pointer_formated(n, 16));
-}
-
-int	ft_print_pointer_formated(long n, int base)
-{
-	int count;
-	char *symbols;
-	char *symbols_up;
-
-	count = 0;
-	symbols = "0123456789abcdef";
-	if (n < base)
-		return (write(1, &symbols[n], 1));
-	else
-	{
-		count = ft_print_pointer_formated(n / base, base);
-		return (count + ft_print_pointer_formated(n % base, base));
-	}
 }

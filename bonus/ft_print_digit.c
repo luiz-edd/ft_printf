@@ -22,15 +22,15 @@ int	ft_print_digit_formated(long n)
 	count = 0;
 	if (n < 0)
 		return (write(1, "-", 1) + ft_print_digit_formated(-n));
-	else if (n < 9)
+	else if (n <= 9)
 	{
 		aux = (n + '0');
 		return (write(1, &aux, 1));
 	}
 	else
 	{
-		count = ft_print_digit(n / 10);
-		return (count + ft_print_digit(n % 10));
+		count = ft_print_digit_formated((n / 10));
+		return (count + ft_print_digit_formated(n % 10));
 	}
 }
 
@@ -41,7 +41,6 @@ int	ft_print_digit(t_format *flags)
 	long	n;
 
 	count = 0;
-	i = -1;
 	n = (long)va_arg(flags->ap, int);
 	if (n >= 0)
 	{

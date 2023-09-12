@@ -20,9 +20,7 @@ int	ft_print_ex_formated(long n, int base)
 
 	count = 0;
 	symbols = "0123456789abcdef";
-	if (n < 0)
-		return (write(1, "-", 1) + ft_print_ex_formated(-n, base));
-	else if (n < base)
+	if (n < base)
 		return (write(1, &symbols[n], 1));
 	else
 	{
@@ -39,6 +37,6 @@ int	ft_print_ex(t_format *flags)
 	count = 0;
 	if (flags->hash >= 1)
 		count += write(2, "0x", 2);
-	n = (unsigned long)flags->ap;
+	n = (unsigned int)(va_arg(flags->ap, unsigned int));
 	return (count + ft_print_ex_formated(n, 16));
 }
