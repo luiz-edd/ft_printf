@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
+/*   ft_print_unsigned_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:19:04 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:12:40 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:44:34 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_print_unsigned_formated(unsigned long n)
 {
 	int		count;
-	char	*symbols;
-	char	*symbols_up;
 	char	aux;
 
 	count = 0;

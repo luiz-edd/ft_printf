@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_ex_up.c                                   :+:      :+:    :+:   */
+/*   ft_print_ex_up_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:47:28 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:12:15 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:38:38 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_print_ex_up_formated(long n, int base)
 {
 	int		count;
 	char	*symbols;
-	char	*symbols_up;
 
 	count = 0;
 	symbols = "0123456789ABCDEF";

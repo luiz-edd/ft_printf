@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_digit.c                                   :+:      :+:    :+:   */
+/*   ft_print_digit_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 20:46:31 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:12:10 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:38:24 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_print_digit_formated(long n)
 {
 	int		count;
-	char	*symbols;
-	char	*symbols_up;
 	char	aux;
 
 	count = 0;
@@ -37,7 +35,6 @@ int	ft_print_digit_formated(long n)
 int	ft_print_digit(t_format *flags)
 {
 	int		count;
-	int		i;
 	long	n;
 
 	count = 0;
