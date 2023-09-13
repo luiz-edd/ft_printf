@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:21:55 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/04 14:12:34 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:59:53 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_print_format(char c, va_list ap)
 	int	count;
 
 	count = 0;
-
 	if (c == 'c')
 		return (ft_princ_char(va_arg(ap, int)));
 	else if (c == 's')
@@ -38,10 +37,7 @@ int	ft_print_format(char c, va_list ap)
 	return (count);
 }
 
-
-
-
-int	ft_printf(const char *format, int num, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		count;
 	va_list	ap;
@@ -49,7 +45,7 @@ int	ft_printf(const char *format, int num, ...)
 
 	count = 0;
 	i = 0;
-	va_start(ap, num);
+	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
