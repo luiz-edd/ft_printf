@@ -5,6 +5,7 @@
 		"ft_printf.h": "c",
 		"unistd.h": "c",
 		"stdarg.h": "c",
-		"printf.h": "c"
+		"printf.h": "c",
+		"ft_printf_bonus.h": "c"
 	}
 }
