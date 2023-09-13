@@ -38,7 +38,7 @@ $(PATH_BONUS_OBJ)%.o: $(PATH_BONUS_SRC)%.c $(BONUS_HEADER)
 	ar rcs $(NAME) $@
 
 clean:
-	rm -rf $(PATH_MANDATORY_OBJ)
+	rm -rf $(PATH_MANDATORY_OBJ) $(PATH_BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
