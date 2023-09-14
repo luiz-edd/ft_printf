@@ -10,7 +10,9 @@ PATH_MANDATORY_OBJ = mandatory/objects/
 PATH_BONUS_SRC = bonus/sources/
 PATH_BONUS_OBJ = bonus/objects/
 
-SRC = ft_printf.c ft_print_char.c ft_print_pointer.c ft_print_str.c ft_print_digit.c
+SRC = ft_eval_format.c ft_print_char.c ft_print_digit.c ft_print_ex_up.c ft_print_ex.c \
+ft_print_pointer.c ft_print_str.c ft_print_unsigned.c ft_printf.c ft_print_utils.c
+
 SRC_B = ft_eval_format_bonus.c ft_print_char_bonus.c ft_print_digit_bonus.c ft_print_ex_up_bonus.c ft_print_ex_bonus.c \
 ft_print_pointer_bonus.c ft_print_str_bonus.c ft_print_unsigned_bonus.c ft_printf_bonus.c ft_print_utils_bonus.c
 

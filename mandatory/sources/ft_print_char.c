@@ -5,14 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 17:44:50 by leduard2          #+#    #+#             */
-/*   Updated: 2023/08/29 20:22:07 by leduard2         ###   ########.fr       */
+/*   Created: 2023/09/04 16:00:26 by leduard2          #+#    #+#             */
+/*   Updated: 2023/09/13 21:06:51 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_princ_char(int n)
+int	ft_print_char(t_format *flag)
 {
-	return (write(1, &n, 1));
+	char	c;
+
+	c = va_arg(flag->ap, int);
+	return (write(1, &c, 1));
 }

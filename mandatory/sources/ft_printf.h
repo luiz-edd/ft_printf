@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 17:42:49 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 19:59:36 by leduard2         ###   ########.fr       */
+/*   Created: 2023/09/04 13:49:18 by leduard2          #+#    #+#             */
+/*   Updated: 2023/09/13 21:27:04 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,40 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define LOWER_CASE 0
-# define UPPER_CASE 1
-# define POINTER_CASE 2
-
-typedef struct s_list
+typedef struct s_format
 {
-	char	*next;
-	char	c;
-}			t_list;
+	va_list	ap;
+	int		wdt;
+	int		prc;
+	int		zero;
+	int		pnt;
+	int		dash;
+	int		tl;
+	int		sign;
+	int		is_zero;
+	int		perc;
+	int		sp;
+	int		hash;
+	int		lowc;
+	int		upc;
+}			t_format;
 
-int			ft_princ_char(int n);
-int			ft_print_str(char *str);
-int			ft_print_digit(long n, int base, char flag_type);
-int			ft_print_pointer(unsigned long n, int base, char flag_type);
+// utils
+t_format	*inicialize_flags(t_format *flags);
 int			ft_printf(const char *format, ...);
-int			ft_print_format(char c, va_list ap);
+
+// ft_eval_format
+int			is_normal_flag(char c);
+int			ft_eval_format(t_format *flags, const char *format, int i);
+int			ft_print_format(char c, t_format *flags);
+
+// normal flags
+int			ft_print_char(t_format *flag);
+int			ft_print_str(t_format *flags);
+int			ft_print_digit(t_format *flags);
+int			ft_print_ex(t_format *flags);
+int			ft_print_ex_up(t_format *flags);
+int			ft_print_pointer(t_format *flags);
+int			ft_print_unsigned(t_format *flags);
 
 #endif
