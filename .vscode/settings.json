@@ -6,6 +6,7 @@
 		"unistd.h": "c",
 		"stdarg.h": "c",
 		"printf.h": "c",
-		"ft_printf_bonus.h": "c"
+		"ft_printf_bonus.h": "c",
+		"ranges": "c"
 	}
 }

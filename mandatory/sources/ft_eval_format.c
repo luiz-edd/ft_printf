@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:26:39 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 21:26:58 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:59:52 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ int	is_normal_flag(char c)
 
 int	ft_print_format(char c, t_format *flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
-
 	if (c == 'c')
 		return (ft_print_char(flags));
 	else if (c == 's')

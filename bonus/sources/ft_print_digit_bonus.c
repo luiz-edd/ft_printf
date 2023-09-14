@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 20:46:31 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 22:05:12 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/14 16:01:21 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_print_digit(t_format *flags)
 	n = (long)va_arg(flags->ap, int);
 	if (n >= 0)
 	{
-		if (flags->sign >= 1 && n > 0)
+		if (flags->sign >= 1 && n >= 0)
 			count += write(1, "+", 1);
 		else if (flags->sp >= 1)
 			count += write(1, " ", 1);
