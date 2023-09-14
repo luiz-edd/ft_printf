@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:47:28 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 21:06:49 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 23:11:44 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int	ft_print_ex(t_format *flags)
 	int				count;
 
 	count = 0;
-	if (flags->hash >= 1)
-		count += write(2, "0x", 2);
 	n = (unsigned int)(va_arg(flags->ap, unsigned int));
+	if (flags->hash >= 1 && n != 0)
+		count += write(1, "0x", 2);
+	
 	return (count + ft_print_ex_formated(n, 16));
 }

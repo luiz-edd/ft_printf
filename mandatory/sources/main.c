@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:25:00 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 21:51:26 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 23:18:49 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@ int	main(void)
 {
 	char *p;
 	p = "10";
-	
+
 	int n = -1;
 	int *np;
 	np = &n;
-	
-	printf("%d\n", (printf(" %p ", np)));
-	printf("%d\n", (ft_printf(" %p ", np)));
+
+	// printf("org: %d\n", printf(" |% 3s|", "a"));
+	// printf("my: %d\n", ft_printf(" |% 3s|", "a"));
+
+	// printf("org: %d\n", printf(" %#x ", 0));
+	// printf("my: %d\n", ft_printf(" %#x ", 0));
+
+	printf("org: %d\n", printf(" |% 1s|", ""));
+	printf("my: %d\n", ft_printf(" |% 1s|", ""));
 
 	// printf("----------------------------\n");
 	// ft_printf("| my: %d\n", ft_printf("%c", 'a'));
