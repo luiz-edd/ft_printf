@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:47:28 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:44:14 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:05:21 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ int	ft_print_pointer(t_format *flags)
 	n = (unsigned long)va_arg(flags->ap, unsigned long);
 	if (n == 0)
 		return (write(1, "(nil)", 5));
-	count += write(2, "0x", 2);
-	return (count + ft_print_pointer_formated(n, 16));
+	return (write(1, "0x", 2) + ft_print_pointer_formated(n, 16));
 }

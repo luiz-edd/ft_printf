@@ -6,13 +6,13 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 01:34:53 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:13:12 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:05:43 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-int	ft_printf(char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int i;
 	int count;
@@ -38,5 +38,7 @@ int	ft_printf(char *format, ...)
 			i++;
 		}
 	}
+	va_end(flags->ap);
+	free(flags);
 	return (count);
 }

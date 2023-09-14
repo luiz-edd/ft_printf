@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_eval_format.c                                   :+:      :+:    :+:   */
+/*   ft_eval_format_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:26:39 by leduard2          #+#    #+#             */
-/*   Updated: 2023/09/13 20:11:54 by leduard2         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:05:03 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-int	ft_eval_format(t_format *flags, char *format, int i)
+int	ft_eval_format(t_format *flags, const char *format, int i)
 {
 	while (!is_normal_flag(format[i]))
 	{
